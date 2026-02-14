@@ -46,6 +46,16 @@ const Projects = () => {
             <p>Social app clone</p>
           </div>
         </div>
+  {/* Card 4 */}
+        <div className="card bg-base-100 w-full max-w-xs shadow-xl">
+          <figure className="px-6 pt-6">
+            <img src="MalikStore.png" alt="" className="rounded-xl w-full h-48 object-cover" />
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">Malik Store</h2>
+            <p>System de Gestion des ventes</p>
+          </div>
+        </div>
 
       </div>
 
