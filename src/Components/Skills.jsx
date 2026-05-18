@@ -1,66 +1,36 @@
 import React from 'react'
 
+const skills = [
+  { name: 'React JS', img: 'react.png', category: 'Frontend' },
+  { name: 'MongoDB', img: 'mongo.png', category: 'Database' },
+  { name: 'Express JS', img: 'ejs.png', category: 'Backend' },
+  { name: 'Communication', img: 'comm.png', category: 'Soft Skill' },
+  { name: 'Problem Solving', img: 'pr.jpg', category: 'Soft Skill' },
+  { name: 'Team Work', img: 'tw.jpg', category: 'Soft Skill' },
+];
+
 const Skills = () => {
   return (
-    <div className="min-h-screen flex flex-col px-4 sm:px-10">
+    <div className="min-h-screen flex flex-col px-6 sm:px-12 md:px-24 py-14">
 
       {/* Title */}
-      <div className="text-center md:text-left md:pl-96 mt-10">
-        <h1 className="text-2xl md:text-4xl">Skills Section</h1>
-        <div className="divider divider-accent"></div>
+      <div className="mb-10">
+        <p className="text-accent text-xs uppercase tracking-widest mb-2">What I know</p>
+        <h1 className="text-white text-3xl md:text-4xl font-bold">Skills</h1>
+        <div className="divider divider-accent mt-3 w-24"></div>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10 place-items-center">
-
-        {/* React */}
-        <div className="card bg-base-100 image-full w-full max-w-xs shadow-xl">
-          <figure><img src="react.png" alt="" /></figure>
-          <div className="card-body">
-            <h2 className="card-title">React Js</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {skills.map(({ name, img, category }) => (
+          <div key={name} className="card bg-base-100 image-full shadow-xl group overflow-hidden hover:scale-105 transition-transform duration-300">
+            <figure><img src={img} alt={name} className="w-full h-full object-cover group-hover:brightness-50 transition duration-300" /></figure>
+            <div className="card-body p-3 flex flex-col justify-end">
+              <span className="text-xs text-accent font-medium uppercase tracking-wider">{category}</span>
+              <h2 className="card-title text-sm">{name}</h2>
+            </div>
           </div>
-        </div>
-
-        {/* Mongo */}
-        <div className="card bg-base-100 image-full w-full max-w-xs shadow-xl">
-          <figure><img src="mongo.png" alt="" /></figure>
-          <div className="card-body">
-            <h2 className="card-title">Mongo DB</h2>
-          </div>
-        </div>
-
-        {/* Express */}
-        <div className="card bg-base-100 image-full w-full max-w-xs shadow-xl">
-          <figure><img src="ejs.png" alt="" /></figure>
-          <div className="card-body">
-            <h2 className="card-title">Express Js</h2>
-          </div>
-        </div>
-
-        {/* Communication */}
-        <div className="card bg-base-100 image-full w-full max-w-xs shadow-xl">
-          <figure><img src="comm.png" alt="" /></figure>
-          <div className="card-body">
-            <h2 className="card-title">Communication</h2>
-          </div>
-        </div>
-
-        {/* Problem Solving */}
-        <div className="card bg-base-100 image-full w-full max-w-xs shadow-xl">
-          <figure><img src="pr.jpg" alt="" /></figure>
-          <div className="card-body">
-            <h2 className="card-title">Problem Resolving</h2>
-          </div>
-        </div>
-
-        {/* Team Work */}
-        <div className="card bg-base-100 image-full w-full max-w-xs shadow-xl">
-          <figure><img src="tw.jpg" alt="" /></figure>
-          <div className="card-body">
-            <h2 className="card-title">Team Work</h2>
-          </div>
-        </div>
-
+        ))}
       </div>
 
     </div>
